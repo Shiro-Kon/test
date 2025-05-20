@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Starforge Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:title" content="Starforge Arena">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58664433-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-58664433-3');
+  </script>
+</head>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(ellipse at center, #0d0d1a 0%, #000010 100%);
+      color: #e0e0ff;
+      overflow: hidden;
+    }
+
+    #play-menu, #disconnect-modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(20, 20, 40, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00f0ff55;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #00f0ff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      color: #c0c0ff;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: #1e1e2e;
+      color: #ffffff;
+      outline: none;
+      margin: 10px 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #00f0ff, #0088ff);
+      color: #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #00cfff, #0066dd);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #disconnect-modal h2 {
+      color: #ff4b5c;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #333;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+
+  <div id="play-menu" class="hidden">
+    <h1>Starforge Arena</h1>
+    <p>
+      Вступіть на космічне поле битви.<br />
+      Пілотуйте свій корабель, знищуйте суперників та станьте легендою галактики.
+    </p>
+    <input type="text" id="username-input" placeholder="Введіть свій позивний..." />
+    <button id="play-button">Запуск</button>
+  </div>
+  <div id="leaderboard" class="hidden">
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div id="disconnect-modal" class="hidden">
+    <h2>З’єднання втрачено</h2>
+    <p>Ви були відключені від сервера Starforge.</p>
+    <hr />
+    <button id="reconnect-button">Знову підключитися</button>
+  </div>
+</body>
+
+</html>
